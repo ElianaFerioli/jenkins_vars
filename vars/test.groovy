@@ -1,6 +1,7 @@
-def call(String environment){
+def call(String environment_name, String squad_name){
     step([$class: 'InfluxDbPublisher',
-                  jenkinsEnvParameterField: 'environment=' + "${environment}",
+                  jenkinsEnvParameterField: 'environment_name=' + "${environment_name}",
+                  jenkinsEnvParameterField: 'squad_name=' + "${squad_name}",
                   measurementName: 'prueba_jenkins',// OPTIONAL, custom fields
                   target: 'prueba_jenkins'])
 }
