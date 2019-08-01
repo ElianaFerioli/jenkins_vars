@@ -7,5 +7,4 @@ def call(String something){
                   jenkinsEnvParameterField: 'environment=develop',
                   measurementName: 'prueba_jenkins',// OPTIONAL, custom fields
                   target: 'prueba_jenkins'])
-      } 
 }
