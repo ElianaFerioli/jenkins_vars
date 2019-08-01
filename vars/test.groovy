@@ -4,7 +4,7 @@ def call(String environment){
                   customDataMap: null,
                   customPrefix: null,
                   //jenkinsEnvParameterTag: 'KEY=' + env.BUILD_NUMBER,
-                  jenkinsEnvParameterField: 'environment=' + ${environment},
+                  jenkinsEnvParameterField: 'environment=' + "${environment}",
                   measurementName: 'prueba_jenkins',// OPTIONAL, custom fields
                   target: 'prueba_jenkins'])
 }
