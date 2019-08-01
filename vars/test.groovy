@@ -1,4 +1,4 @@
-def test(){
+def call(String something){
     step([$class: 'InfluxDbPublisher',
                   customData: null,
                   customDataMap: null,
