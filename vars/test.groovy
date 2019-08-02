@@ -2,6 +2,7 @@ def call(String environment_name, String squad_name){
     def myDataMap = [:]
     myDataMap['environment_name'] = "${environment_name}"
     myDataMap['squad_name'] = "${squad_name}"
+    myDataMap['build_result'] =  "${currentBuild.currentResult}"
     step([$class: 'InfluxDbPublisher',
                   //jenkinsEnvParameterField: 'environment_name=' + "${environment_name}" + " " + "test=test",
                   //jenkinsEnvParameterTag: 'squad_name=' + "${squad_name}" + ",TEST=TEST",
