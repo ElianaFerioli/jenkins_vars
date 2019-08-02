@@ -14,6 +14,7 @@ def call(String environment_name, String squad_name){
         dataMap['build_result_ordinal'] =  0
     }
     def squads = squad_name.split(',')
+    print "dasdasdasads"
     for(squad in squads){
         dataMapNew['TEST_' + squad] = squad
     }
