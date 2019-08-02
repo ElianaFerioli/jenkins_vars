@@ -1,5 +1,6 @@
 def call(String environment_name, String squad_name){
     def dataMap = [:]
+    def dataMapNew = [:]
     dataMap['environment_name'] = "${environment_name}"
     dataMap['squad_name'] = "${squad_name}"
     dataMap['build_result'] =  "${currentBuild.currentResult}"
@@ -12,6 +13,11 @@ def call(String environment_name, String squad_name){
     if("${currentBuild.currentResult}"=='UNSTABLE'){
         dataMap['build_result_ordinal'] =  0
     }
+    def squads = squad_name.split(',')
+    for(squad in squads){
+        dataMapNew['TEST_' + squad] = squad
+    }
+    
     step([$class: 'InfluxDbPublisher',
                   //jenkinsEnvParameterField: 'environment_name=' + "${environment_name}" + " " + "test=test",
                   //jenkinsEnvParameterTag: 'squad_name=' + "${squad_name}" + ",TEST=TEST",
